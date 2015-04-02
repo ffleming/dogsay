@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'dogsay'
+input = ARGV.empty? ? ARGF.read : ARGV.join(' ')
+Dogsay.say(input)
