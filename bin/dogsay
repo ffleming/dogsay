@@ -24,4 +24,4 @@ end
 options = opts_from_cli
 puts Dogsay.all_dogs and exit if options[:all_dogs]
 input = ARGV.empty? ? ARGF.read : ARGV.join(' ')
-Dogsay.say(input, options)
+puts Dogsay.say(input, options)
