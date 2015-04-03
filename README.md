@@ -67,10 +67,8 @@ or
 5. Create a new Pull Request
 
 ## Todo
-* Leaner requires
 * Tests
-* Show all dogs method
-* Allow specifying dog on command line
+* Handle invalid dog specified on command line
 * More dogs!
 
 ##Acknowledgments

@@ -5,23 +5,27 @@ require 'optparse'
 def opts_from_cli
   options = {}
   opt_parser = OptionParser.new do |opts|
-    opts.banner = "#{$0} [options]"
+    opts.program_name = 'dogsay'
+    opts.banner = "#{opts.program_name} [options]"
     opts.on('-d DOG', '--dog DOG', 'Display a particular dog') { |dog| options[:dog] = dog.to_sym }
     opts.on('-s', '--strip', 'Strip newlines') { options[:strip] = true }
     opts.on('-a', '--all-dogs', 'Show all dogs') { options[:all_dogs] = true }
-    opts.on('-h', '--help', 'Display this screen') { puts opts ; exit }
+    opts.on('-h', '--help', 'Display this screen') { puts opts ; exit(true) }
   end
   begin
     opt_parser.parse!
   rescue OptionParser::InvalidOption => e
     puts e.message
     puts opts
-    exit
+    exit false
   end
   options
 end
 
 options = opts_from_cli
-puts Dogsay.all_dogs and exit if options[:all_dogs]
+if options[:all_dogs]
+  puts "Possible dogs are: #{Dogsay::Dog.all}"
+  exit true
+end
 input = ARGV.empty? ? ARGF.read : ARGV.join(' ')
 puts Dogsay.say(input, options)
