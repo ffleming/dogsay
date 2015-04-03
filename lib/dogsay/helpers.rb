@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 class Array
   def pad_to!(elements, opts={})
     pad_obj = opts.fetch(:with, nil)
@@ -16,22 +15,27 @@ class Array
 end
 
 class String
-  def space_at(width)
-    self.split(' ').map { |word| word.scan(/.{1,#{width}}/) }.flatten.join(' ')
+  def space_at(width, opts={})
+    separator = opts.fetch(:on, / /)
+    self.split(separator).map do |word|
+      word.scan(/.{1,#{width}}/m)
+    end.flatten.join(' ')
   end
 
   def wrap(width)
-    self.space_at(width).split("\n").map! do |line|
+    self.split("\n").map! do |line|
       line.length > width ? line.gsub(/(.{1,#{width}})(\s+|$)/, "\\1\n").strip : line
-    end * "\n"
+    end.join("\n")
   end
 
   def boxed(width, opts={})
     justify = opts.fetch(:justify, :center)
     raise ArgumentError.new, "Width must be >= 5" unless width >= 5
     raise ArgumentError.new, ":justify must be :ljust, :rjust, or :center" unless %i(ljust rjust center).include? justify
-    arr = self.wrap(width - 4).split("\n").map { |l| "| #{l.send(justify, width - 4)} |" }
+    arr = self.split("\n").map do |l|
+      "| #{l.send(justify, width - 4)} |"
+    end
     header_line =  "+#{'-' * (width - 2)}+"
-    [header_line, *arr, header_line].join "\n"
+    [header_line, *arr, header_line].join("\n")
   end
 end

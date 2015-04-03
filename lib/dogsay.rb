@@ -6,7 +6,7 @@ require 'io/console'
 require 'yaml'
 module Dogsay
   class << self
-    def say(string)
+    def say(string, opts={})
       puts dog_with_box(string)
     end
 
@@ -20,7 +20,9 @@ module Dogsay
     end
 
     def dog_with_box(string, opts={})
-      Dogsay::AsciiArt.join(art: dog, text: string.boxed(40))
+      text_width = opts.fetch(:text_width, 40)
+      text = string.space_at(text_width - 4).wrap(text_width - 4).boxed(text_width)
+      Dogsay::AsciiArt.join(art: dog, text: text)
     end
   end
 end
