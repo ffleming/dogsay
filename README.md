@@ -69,7 +69,7 @@ or
 ## Todo
 * Leaner requires
 * Tests
-* Long texts are a bit off
+* Preserve newlines in input
 
 ##Acknowledgments
 * by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)

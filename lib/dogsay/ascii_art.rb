@@ -18,11 +18,19 @@ module Dogsay::AsciiArt
 
     def join_h(l_str, r_str)
       l_arr, r_arr = l_str.split("\n"), r_str.split("\n")
-      lines = [l_arr.length, r_arr.length].max
-      l_padded, r_padded = l_arr.pad_to(lines, with: ''), r_arr.pad_to(lines, with: '')
-      (0..lines).map do |i|
-        "#{l_padded[i]}#{r_padded[i]}"
+      l_arr, r_arr = normalized_arrays_from(l_str, r_str)
+      (0..l_arr.length - 1).map do |i|
+        "#{l_arr[i]}#{r_arr[i]}"
       end.join("\n")
+    end
+
+    def normalized_arrays_from(l_str, r_str)
+      l_arr, r_arr = l_str.split("\n"), r_str.split("\n")
+      max_arr_length = [l_arr.length, r_arr.length].max
+      [l_arr, r_arr].map do |array|
+        max_str_length = array.map(&:length).max
+        array.pad_to(max_arr_length, with: ' ' * max_str_length)
+      end
     end
   end
 end
