@@ -4,9 +4,13 @@ class Dogsay::Dog
   attr_reader :text_position
   def initialize(dog=:sit)
     filename = File.join( File.dirname(__FILE__), 'dogs', "#{dog}.dog")
-    hsh = YAML.load_file filename
-    @ascii = ascii_from(hsh)
-    @text_position = hsh[:text_position]
+    begin
+      hsh = YAML.load_file filename
+      @ascii = ascii_from(hsh)
+      @text_position = hsh[:text_position]
+    rescue Errno::ENOENT
+      abort "Dog '#{dog}' not found"
+    end
   end
 
   def to_s

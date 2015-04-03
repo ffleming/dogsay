@@ -68,7 +68,6 @@ or
 
 ## Todo
 * Tests
-* Handle invalid dog specified on command line
 * More dogs!
 
 ##Acknowledgments
