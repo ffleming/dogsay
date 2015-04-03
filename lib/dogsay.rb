@@ -7,6 +7,7 @@ require 'yaml'
 module Dogsay
   class << self
     def say(string, opts={})
+      @opts = opts
       puts dog_with_box(string)
     end
 
@@ -19,9 +20,10 @@ module Dogsay
       line_arr.map { |l| l.ljust(max_length) }.join("\n")
     end
 
-    def dog_with_box(string, opts={})
-      text_width = opts.fetch(:text_width, 40)
-      text = string.space_at(text_width - 4).wrap(text_width - 4).boxed(text_width)
+    def dog_with_box(string)
+      text_width = @opts.fetch(:text_width, 40)
+      separator = @opts.fetch(:strip, false) ? ' ' : / /
+      text = string.space_at(text_width - 4, on: separator).wrap(text_width - 4).boxed(text_width)
       Dogsay::AsciiArt.join(art: dog, text: text)
     end
   end

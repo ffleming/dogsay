@@ -69,7 +69,9 @@ or
 ## Todo
 * Leaner requires
 * Tests
-* Preserve newlines in input
+* Show all dogs method
+* Allow specifying dog on command line
+* More dogs!
 
 ##Acknowledgments
 * by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
