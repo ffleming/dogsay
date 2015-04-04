@@ -13,7 +13,8 @@ module Dogsay
     def say(string, opts={})
       dog  = Dogsay::Dog.new(config.merge opts)
       text = Dogsay::TextBox.new(string, opts)
-      dog.add_art(text.ascii, on_the: dog.text_position)
+      boxed = opts[:raw] ? text.raw : text.ascii
+      dog.add_art(boxed, on_the: dog.text_position)
     end
 
     private
@@ -27,7 +28,11 @@ module Dogsay
     end
 
     def defaults
-      { dog: :sit }
+      {
+        animal: :dog,
+        dog:    :sit,
+        dino:   :trex
+      }
     end
   end
 end

@@ -56,8 +56,10 @@ or
          \    <`.._  )) |  .;-. ))     |             Review, 1876             |
          (__.  `  ))-'  \_    ))'      +--------------------------------------+
              `'--"`       `"""`
-
 ```
+
+If you're feeling saucy, you can try out `dinosay` as well.
+
 ## Contributing
 
 1. Fork it ( https://github.com/ffleming/dogsay/fork )
@@ -69,6 +71,7 @@ or
 ## Todo
 * Tests
 * More dogs!
+* Extract chains after `do...end` to their own methods
 
 ##Acknowledgments
 * `sit.dog` by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
@@ -76,3 +79,4 @@ or
 * `small_sit.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
 * `running.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
 * `gsd.dog` by 'hrr' at [chris.com](http://www.chris.com/ascii/index.php?art=animals/dogs)
+* `trex.dino` by `CJ` at [retrojunkie.com](http://www.retrojunkie.com/asciiart/animals/dinos.htm)

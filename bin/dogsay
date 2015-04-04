@@ -5,12 +5,17 @@ require 'optparse'
 def opts_from_cli
   options = {}
   opt_parser = OptionParser.new do |opts|
-    opts.program_name = 'dogsay'
+    opts.program_name = File.basename(__FILE__)
     opts.banner = "#{opts.program_name} [options]"
     opts.on('-d DOG', '--dog DOG', 'Display a particular dog') { |dog| options[:dog] = dog.to_sym }
+    opts.on('-a ANIMAL', '--animal ANIMAL', 'Display a non-dog animal') { |animal| options[:animal] = animal.to_sym }
+    opts.on('-w WIDTH', '--width WIDTH', 'Width for text box') { |width| options[:text_width] = width.to_i }
+    opts.on('-j JUSTIFY', '--justify JUSTIFY', 'Justify text', 'Options are ljust, rjust, and center') { |j| options[:justify] = j.to_sym }
+    opts.on('-r', --raw, 'Don\'t process text)', { options[:raw] = true }
     opts.on('-s', '--strip', 'Strip newlines from input') { options[:strip] = true }
     opts.on('-l', '--list', 'List available dogs') { options[:all_dogs] = true }
-    opts.on('-h', '--help', 'Display this screen') { puts opts ; exit(true) }
+    opts.on('--list-animals', 'List available animal types') { options[:all_animals] = true }
+    opts.on('-h', '--help', 'Display this screen') { options[:help] = true ; options[:input] = opts.to_s }
   end
   begin
     opt_parser.parse!
@@ -18,13 +23,26 @@ def opts_from_cli
     puts e.message
     exit false
   end
+  options[:animal] = File.basename($0).sub(/say$/,'').to_sym if options[:animal].nil?
   options
 end
 
 options = opts_from_cli
+
+if options[:help]
+  options.merge!({justify: :ljust, text_width: 55, raw: true})
+  puts Dogsay.say(options[:input], options)
+  exit(true)
+end
 if options[:all_dogs]
-  puts "Possible dogs are: #{Dogsay::Dog.all}"
+  animal = options.fetch(:animal, :dog)
+  puts "Possible #{animal}s are: #{Dogsay::Dog.all(animal)}"
   exit true
 end
+if options[:all_animals]
+  puts "Possible animals are: #{Dogsay::Dog.all_animals}"
+  exit true
+end
+
 input = ARGV.empty? ? ARGF.read : ARGV.join(' ')
 puts Dogsay.say(input, options)
