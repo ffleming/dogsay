@@ -1,4 +1,3 @@
-require 'yaml'
 class Dogsay::Dog
   include Dogsay::AsciiArt
   attr_reader :text_position
