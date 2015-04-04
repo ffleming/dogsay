@@ -16,7 +16,6 @@ def opts_from_cli
     opt_parser.parse!
   rescue OptionParser::InvalidOption => e
     puts e.message
-    puts opts
     exit false
   end
   options
