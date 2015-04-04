@@ -72,6 +72,7 @@ or
 
 ##Acknowledgments
 * `sit.dog` by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
+* `terrier.dog` from [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
 * `small_sit.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
 * `running.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
 * `gsd.dog` from 'hrr' at [chris.com](http://www.chris.com/ascii/index.php?art=animals/dogs)
