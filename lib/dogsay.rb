@@ -4,17 +4,30 @@ require 'dogsay/version'
 require 'dogsay/ascii_art'
 require 'dogsay/dog'
 require 'dogsay/text_box'
-require 'io/console'
 require 'yaml'
-String.include CoreExtensions::String::Box
 Array.include CoreExtensions::Array::Padding
+String.include CoreExtensions::String::Box
 
 module Dogsay
   class << self
     def say(string, opts={})
-      dog  = Dogsay::Dog.new(opts.fetch(:dog, :sit))
+      dog  = Dogsay::Dog.new(config.merge opts)
       text = Dogsay::TextBox.new(string, opts)
       dog.add_art(text.ascii, on_the: dog.text_position)
+    end
+
+    private
+
+    def config
+      begin
+        defaults.merge(YAML.load_file "#{ENV['HOME']}/.dogsay")
+      rescue Errno::ENOENT
+        defaults
+      end
+    end
+
+    def defaults
+      { dog: :sit }
     end
   end
 end
