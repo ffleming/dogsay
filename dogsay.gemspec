@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Forrest Fleming"]
   spec.email         = ["ffleming@gmail.com"]
   spec.summary       = %q{Like cowsay, but with a dog}
-  spec.description   = %q{Prints CLI arguments or STDIN in speech bubble, said by a dog.  Dogs are better than cows, after all.}
+  spec.description   = %q{Prints CLI arguments or STDIN in a speech bubble, said by a dog.  Dogs are better than cows, after all.}
   spec.homepage      = 'http://github.com/ffleming/dogsay'
   spec.license       = "MIT"
 
