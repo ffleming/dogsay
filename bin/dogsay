@@ -11,7 +11,7 @@ def opts_from_cli
     opts.on('-a ANIMAL', '--animal ANIMAL', 'Display a non-dog animal') { |animal| options[:animal] = animal.to_sym }
     opts.on('-w WIDTH', '--width WIDTH', 'Width for text box') { |width| options[:text_width] = width.to_i }
     opts.on('-j JUSTIFY', '--justify JUSTIFY', 'Justify text', 'Options are ljust, rjust, and center') { |j| options[:justify] = j.to_sym }
-    opts.on('-r', --raw, 'Don\'t process text)', { options[:raw] = true }
+    opts.on('-r', '--raw', 'Don\'t process text') { options[:raw] = true }
     opts.on('-s', '--strip', 'Strip newlines from input') { options[:strip] = true }
     opts.on('-l', '--list', 'List available dogs') { options[:all_dogs] = true }
     opts.on('--list-animals', 'List available animal types') { options[:all_animals] = true }
