@@ -53,7 +53,7 @@ RSpec.describe String do
     end
     context 'with a string with linebreaks' do
       it 'should remove the spaces' do
-        expect(linebreaks.wrap 5).to eq "Woof.\n Arf?\nArroooooo!"
+        expect(linebreaks.wrap 5).to eq "Woof.\nArf?\nArroooooo!"
       end
     end
   end # wrap

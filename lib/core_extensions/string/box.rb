@@ -10,7 +10,7 @@ module CoreExtensions
 
       def wrap(width)
         self.split("\n").map! do |line|
-          line.length > width ? line.gsub(/(.{1,#{width}})(\s+|$)/, "\\1\n").strip : line
+          line.length > width ? line.gsub(/(.{1,#{width}})(\s+|$)/, "\\1\n").strip : line.strip
         end.join("\n")
       end
 
