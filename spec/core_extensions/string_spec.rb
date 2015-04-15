@@ -58,4 +58,35 @@ RSpec.describe String do
     end
   end # wrap
 
+  describe '#boxed' do
+    context 'with a string of appropriate length' do
+      it 'should default to width 40' do
+        result = "+--------------------------------------+\n" <<
+                 "|     Woof arf bark ruff rowf won      |\n" <<
+                 "+--------------------------------------+"
+        expect(string.boxed).to eq result
+      end
+      context 'and width 20' do
+        it 'should box appropriately' do
+          result = "+------------------+\n" <<
+          "|      Woof.       |\n" <<
+          "|       Arf?       |\n" <<
+          "|    Arroooooo!    |\n" <<
+          "+------------------+"
+          expect(linebreaks.boxed 20).to eq result
+        end
+      end
+      context 'and width 5' do
+        it 'should box appriately' do
+          expect('!'.boxed 5).to eq "+---+\n| ! |\n+---+"
+        end
+      end
+    end
+
+    context 'with a string that is too short' do
+      it 'should raise an exception' do
+        expect{string.boxed 4}.to raise_error
+      end
+    end
+  end #boxed
 end

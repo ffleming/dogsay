@@ -14,7 +14,7 @@ module CoreExtensions
         end.join("\n")
       end
 
-      def boxed(width, opts={})
+      def boxed(width=40, opts={})
         justify = opts.fetch(:justify, :center)
         raise ArgumentError.new, "Width must be >= 5" unless width >= 5
         raise ArgumentError.new, ":justify must be :ljust, :rjust, or :center" unless %i(ljust rjust center).include? justify
