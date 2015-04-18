@@ -1,6 +1,7 @@
 # Dogsay
 [![Gem Version](https://badge.fury.io/rb/dogsay.svg)](http://badge.fury.io/rb/dogsay)
 [![Code Climate](https://codeclimate.com/github/ffleming/dogsay/badges/gpa.svg)](https://codeclimate.com/github/ffleming/dogsay)
+[![Build Status](https://travis-ci.org/ffleming/dogsay.svg?branch=master)](https://travis-ci.org/ffleming/dogsay)
 
 It's like cowsay, but with a dog.
 
