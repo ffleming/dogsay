@@ -45,4 +45,9 @@ if options[:all_animals]
 end
 
 input = ARGV.empty? ? ARGF.read : ARGV.join(' ')
-puts Dogsay.say(input, options)
+begin
+  puts Dogsay.say(input, options)
+rescue Dogsay::InvalidDogError => e
+  puts e.message
+  exit false
+end
