@@ -3,7 +3,7 @@ class Dogsay::Dog
   attr_reader :text_position, :animal, :name
   def initialize(opts={})
     @animal, @name = animal_and_name_from(opts)
-    load_yaml rescue Errno::ENOENT abort "'#{name}.#{animal}' not found"
+    load_yaml
   end
 
   def to_s
@@ -47,8 +47,12 @@ class Dogsay::Dog
   end
 
   def load_yaml
-    yaml_hash = YAML.load_file filename
-    @ascii = ascii_from(yaml_hash)
-    @text_position = yaml_hash[:text_position]
+    begin
+      yaml_hash = YAML.load_file filename
+      @ascii = ascii_from(yaml_hash)
+      @text_position = yaml_hash[:text_position]
+    rescue Errno::ENOENT
+      abort "'#{name}.#{animal}' not found at #{filename}"
+    end
   end
 end
