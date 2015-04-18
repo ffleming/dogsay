@@ -1,5 +1,6 @@
 require 'core_extensions/array/padding'
 require 'core_extensions/string/box'
+require 'dogsay/errors'
 require 'dogsay/version'
 require 'dogsay/ascii_art'
 require 'dogsay/dog'
@@ -30,8 +31,7 @@ module Dogsay
     def defaults
       {
         animal: :dog,
-        dog:    :sit,
-        dino:   :trex
+        pose:   :default
       }
     end
   end

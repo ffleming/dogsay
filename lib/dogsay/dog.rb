@@ -1,8 +1,9 @@
 class Dogsay::Dog
   include Dogsay::AsciiArt
-  attr_reader :text_position, :animal, :name
+  attr_reader :text_position, :animal, :pose
   def initialize(opts={})
-    @animal, @name = animal_and_name_from(opts)
+    @animal  = opts.fetch :animal
+    @pose    = opts.fetch :pose
     load_yaml
   end
 
@@ -27,32 +28,22 @@ class Dogsay::Dog
   private
 
   def filename
-    File.join( File.dirname(__FILE__), 'dogs', "#{name}.#{animal}")
+    File.join( File.dirname(__FILE__), 'dogs', "#{pose}.#{animal}")
   end
 
-  def animal_and_name_from(opts)
+  def load_yaml
     begin
-      generic  = opts.fetch(:animal, :dog)
-      specific = opts.fetch(generic)
-    rescue KeyError
-      abort "Animal :#{generic} specified, but key :#{specific} not provided"
+      yaml_hash = YAML.load_file filename
+    rescue Errno::ENOENT
+      raise Dogsay::InvalidDogError.new("Invalid dog file #{filename}")
     end
-    [generic, specific]
+    @ascii = ascii_from(yaml_hash)
+    @text_position = yaml_hash[:text_position]
   end
 
   def ascii_from(hash)
     dog_lines = hash[:dog].split("\n")
     max_length = dog_lines.map(&:length).max
     dog_lines.map { |l| l.ljust(max_length) }.join("\n")
-  end
-
-  def load_yaml
-    begin
-      yaml_hash = YAML.load_file filename
-      @ascii = ascii_from(yaml_hash)
-      @text_position = yaml_hash[:text_position]
-    rescue Errno::ENOENT
-      abort "'#{name}.#{animal}' not found at #{filename}"
-    end
   end
 end

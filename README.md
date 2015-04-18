@@ -69,14 +69,14 @@ If you're feeling saucy, you can try out `dinosay` as well.
 5. Create a new Pull Request
 
 ## Todo
-* Tests
 * More dogs!
 * Extract chains after `do...end` to their own methods
 
 ##Acknowledgments
-* `sit.dog` by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
-* `terrier.dog` from [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
-* `small_sit.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
+* `default.dog` by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
+* `small.dog` from [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
+* `sit.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
 * `running.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
 * `gsd.dog` by 'hrr' at [chris.com](http://www.chris.com/ascii/index.php?art=animals/dogs)
-* `trex.dino` by `CJ` at [retrojunkie.com](http://www.retrojunkie.com/asciiart/animals/dinos.htm)
+* `default.dino` by `CJ` at [retrojunkie.com](http://www.retrojunkie.com/asciiart/animals/dinos.htm)
+* `small.dino` by `PapaJ` at [retrojunkie.com](http://www.retrojunkie.com/asciiart/animals/dinos.htm)

@@ -7,14 +7,14 @@ RSpec.describe Dogsay::Dog do
     context 'using defaults' do
       let(:bad_dog) { Dogsay::Dog.new }
       it 'should abort with an unspecifed dog' do
-        expect{bad_dog.animal}.to raise_error(SystemExit)
+        expect{bad_dog.animal}.to raise_error(KeyError)
       end
     end
 
-    context 'dog of :sit' do
-      let(:sitting_dog) { Dogsay::Dog.new(dog: :sit) }
-      it 'should set :dog to :sit' do
-        expect(sitting_dog.name).to eq :sit
+    context 'dog of :default' do
+      let(:sitting_dog) { Dogsay::Dog.new(pose: :default, animal: :dog) }
+      it 'should set :dog to :default' do
+        expect(sitting_dog.pose).to eq :default
       end
 
       it 'should set :animal to :dog' do
@@ -30,13 +30,18 @@ RSpec.describe Dogsay::Dog do
 
   describe '::all' do
     it 'should list all dogs' do
-      expect(Dogsay::Dog.all).to eq 'gsd, running, sit, small_sit, terrier'
+      expect(Dogsay::Dog.all).to include 'gsd'
+      expect(Dogsay::Dog.all).to include 'running'
+      expect(Dogsay::Dog.all).to include 'sit'
+      expect(Dogsay::Dog.all).to include 'small'
+      expect(Dogsay::Dog.all).to include 'default'
     end
   end
 
   describe '::all_animals' do
     it 'should list all animals' do
-      expect(Dogsay::Dog.all_animals).to eq 'dog, dino'
+      expect(Dogsay::Dog.all_animals).to include 'dino'
+      expect(Dogsay::Dog.all_animals).to include 'dog'
     end
   end
 end
