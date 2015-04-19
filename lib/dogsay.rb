@@ -1,7 +1,7 @@
 require 'core_extensions/array/padding'
 require 'core_extensions/string/box'
-require 'dogsay/errors'
 require 'dogsay/version'
+require 'dogsay/errors'
 require 'dogsay/ascii_art'
 require 'dogsay/dog'
 require 'dogsay/text_box'
