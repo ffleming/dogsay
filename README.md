@@ -40,29 +40,31 @@ or
 ```
 % fortune | dogsay
                           _            +--------------------------------------+
-                        ,:'/   _..._   |   Till then we shall be content to   |
-                       // ( `""-.._.'  |        admit openly, what you        |
-                       \| /    6\___  /|  (religionists) whisper under your   |
-                       |     6      4  | breath or hide in technical jargon,  |
-                       |            /  | that the ancient secret is a secret  |
-                       \_       .--'   | still; that man knows nothing of the |
-                       (_'---'`)       |   Infinite and Absolute; and that,   |
-                       / `'---`()      |  knowing nothing, he had better not  |
-                     ,'        |       |   be dogmatic about his ignorance.   |
-     ,            .'`          |       | And, meanwhile, we will endeavour to |
-     )\       _.-'             ;       |  be as charitable as possible, and   |
-    / |    .'`   _            /        | whilst you trumpet forth officially  |
-  /` /   .'       '.        , |        | your contempt for our skepticism, we |
- /  /   /           \   ;   | |        |  will at least try to believe that   |
-|  \  |            |  .|   | |         |   you are imposed upon by your own   |
-  \  `"|           /.-' |   | |        |    bluster. - Leslie Stephen, "An    |
-   '-..-\       _.;.._  |   |.;-.      |   agnostic's Apology", Fortnightly   |
-         \    <`.._  )) |  .;-. ))     |             Review, 1876             |
-         (__.  `  ))-'  \_    ))'      +--------------------------------------+
+                        ,:'/   _..._   | [Maturity consists in the discovery  |
+                       // ( `""-.._.'  | that] there comes a critical moment  |
+                       \| /    6\___  /| where everything is reversed, after  |
+                       |     6      4  |      which the point becomes to      |
+                       |            /  | understand more and more that there  |
+                       \_       .--'   |     is something which cannot be     |
+                       (_'---'`)       |    understood. -- S. Kierkegaard     |
+                       / `'---`()      +--------------------------------------+
+                     ,'        |
+     ,            .'`          |
+     )\       _.-'             ;
+    / |    .'`   _            /
+  /` /   .'       '.        , |
+ /  /   /           \   ;   | |
+|  \  |            |  .|   | |
+  \  `"|           /.-' |   | |
+   '-..-\       _.;.._  |   |.;-.
+         \    <`.._  )) |  .;-. ))
+         (__.  `  ))-'  \_    ))'
              `'--"`       `"""`
 ```
 
-If you're feeling saucy, you can try out `dinosay` as well.
+If you're feeling saucy, you can try out `dinosay` as well:
+
+
 
 ## Configuration
 
