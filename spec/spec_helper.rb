@@ -17,7 +17,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
+require 'codeclimate-test-reporter'
 SimpleCov.start
+CodeClimate::TestReporter.start
 require_relative '../lib/dogsay'
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
