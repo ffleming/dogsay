@@ -4,16 +4,26 @@ RSpec.describe Dogsay do
   end
 
   describe '#say' do
+    let(:defaults) do
+      {
+        animal: :dog,
+        pose: :default,
+        raw: false,
+        text_width: 40,
+        strip: false
+      }
+    end
+
     it 'shoud bark' do
       woof = File.open(File.join 'spec', 'fixtures', 'say_woof').read
-      expect(Dogsay.say('woof')).to eq woof
+      expect(Dogsay.say('woof', defaults)).to eq woof
     end
 
     it 'should know poetry' do
       sappho = File.open(File.join 'spec', 'fixtures', 'say_sappho').read
       poem = "We know this much\nDeath is an evil;\nwe have the gods'\n" <<
              "word for it; they too\nwould die if death\nwere a good thing"
-      expect(Dogsay.say(poem)).to eq sappho
+      expect(Dogsay.say(poem, defaults)).to eq sappho
     end
 
     context 'without a configuration file' do
