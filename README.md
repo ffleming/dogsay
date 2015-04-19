@@ -72,10 +72,6 @@ If you're feeling saucy, you can try out `dinosay` as well.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-## Todo
-* More dogs!
-* Extract chains after `do...end` to their own methods
-
 ##Acknowledgments
 * `default.dog` by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
 * `small.dog` from [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
