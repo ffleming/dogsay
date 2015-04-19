@@ -64,6 +64,30 @@ or
 
 If you're feeling saucy, you can try out `dinosay` as well.
 
+## Configuration
+
+Edit `.dogsay` in your home directory.  It is a Yaml file that looks something
+like this:
+```yaml
+:pose: :small
+:justify: :center
+:strip: :true
+:text_width: 35
+```
+
+The full options (though some, like `:raw`, are incompatible with others, like
+`:justify`) are:
+```yaml
+:pose: <see dogs directory or use dogsay --list>
+:justify: <:ljust|:center|:rjust>
+:strip: <true|false>
+:raw: <true|false>
+:text_width: <integer>
+```
+
+Note that you can't set `:animal` in your dotfile, as if you want a dog you use
+ `dogsay` and if you want a dinosaur you use `dinosay`.
+
 ## Contributing
 
 1. Fork it ( https://github.com/ffleming/dogsay/fork )
@@ -72,7 +96,8 @@ If you're feeling saucy, you can try out `dinosay` as well.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-##Acknowledgments
+## Acknowledgments
+
 * `default.dog` by 'dgs' at [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
 * `small.dog` from [Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
 * `sit.dog` from [AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)

@@ -15,7 +15,7 @@ module Dogsay
       options = config.merge opts
       dog     = Dogsay::Dog.new(options)
       text    = Dogsay::TextBox.new(string, options)
-      boxed   = opts[:raw] ? text.raw : text.ascii
+      boxed   = options[:raw] ? text.raw : text.ascii
       dog.add_art(boxed, on_the: dog.text_position)
     end
 

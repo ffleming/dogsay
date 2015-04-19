@@ -37,9 +37,14 @@ RSpec.describe Dogsay do
     end
 
     context 'when missing dogfiles' do
-      it 'should abort' do
+      it 'should try pose of :default first' do
+        opts = defaults.merge(pose: :gsd, animal: :dino)
+        expect { Dogsay.say('woof', opts) }.to_not raise_error
+      end
+
+      it 'should raise an error' do
         allow(YAML).to receive(:load_file) { raise Errno::ENOENT }
-        expect {Dogsay.say 'woof'}.to raise_error
+        expect { Dogsay.say 'woof' }.to raise_error
       end
     end
 

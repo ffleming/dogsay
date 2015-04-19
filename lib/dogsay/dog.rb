@@ -35,7 +35,12 @@ class Dogsay::Dog
     begin
       yaml_hash = YAML.load_file filename
     rescue Errno::ENOENT
-      raise Dogsay::InvalidDogError.new("Invalid dog file #{filename}")
+      begin
+        @pose = :default
+        yaml_hash = YAML.load_file filename
+      rescue Errno::ENOENT
+        raise Dogsay::InvalidDogError.new("Invalid dog file #{filename}")
+      end
     end
     @ascii = ascii_from(yaml_hash)
     @text_position = yaml_hash[:text_position]
