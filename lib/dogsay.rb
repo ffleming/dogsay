@@ -12,9 +12,10 @@ String.include CoreExtensions::String::Box
 module Dogsay
   class << self
     def say(string, opts={})
-      dog  = Dogsay::Dog.new(config.merge opts)
-      text = Dogsay::TextBox.new(string, opts)
-      boxed = opts[:raw] ? text.raw : text.ascii
+      options = config.merge opts
+      dog     = Dogsay::Dog.new(options)
+      text    = Dogsay::TextBox.new(string, options)
+      boxed   = opts[:raw] ? text.raw : text.ascii
       dog.add_art(boxed, on_the: dog.text_position)
     end
 
