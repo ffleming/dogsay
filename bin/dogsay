@@ -15,6 +15,7 @@ def opts_from_cli
     opts.on('-s', '--strip', 'Strip newlines from input') { options[:strip] = true }
     opts.on('-l', '--list', 'List available dogs') { options[:all_dogs] = true }
     opts.on('--list-animals', 'List available animal types') { options[:all_animals] = true }
+    opts.on('-v', '--version', 'Print version information') { options[:version] = true }
     opts.on('-h', '--help', 'Display this screen') { options[:help] = true ; options[:input] = opts.to_s }
   end
   begin
@@ -41,6 +42,10 @@ if options[:all_dogs]
 end
 if options[:all_animals]
   puts "Possible animals are: #{Dogsay::Dog.all_animals}"
+  exit true
+end
+if options[:version]
+  puts "#{File.basename(__FILE__)} #{Dogsay::VERSION}"
   exit true
 end
 
