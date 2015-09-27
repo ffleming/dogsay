@@ -14,6 +14,16 @@ RSpec.describe Dogsay do
       }
     end
 
+    dir = './spec/fixtures/fortunes'
+    (1..100).each do |n|
+      it "should pass Fixture Test #{n}" do
+        fortune = File.read("#{dir}/#{n}.fortune")
+        expected = File.read("#{dir}/#{n}.output")
+        output = Dogsay.say(fortune)
+        expect(output).to eq expected
+      end
+    end
+
     it 'shoud bark' do
       woof = File.open(File.join 'spec', 'fixtures', 'say_woof').read
       expect(Dogsay.say('woof', defaults)).to eq woof
