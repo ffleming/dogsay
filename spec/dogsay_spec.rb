@@ -19,7 +19,7 @@ RSpec.describe Dogsay do
       it "should pass Fixture Test #{n}" do
         fortune = File.read("#{dir}/#{n}.fortune")
         expected = File.read("#{dir}/#{n}.output")
-        output = Dogsay.say(fortune)
+        output = Dogsay.say(fortune, defaults)
         expect(output).to eq expected
       end
     end

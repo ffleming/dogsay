@@ -1,16 +1,21 @@
-+--------------------------------------+
-|    "I don't know why, but first C    |
-|  programs tend to look a lot worse   |
-|                 than                 |
-| first programs in any other language |
-| (maybe except for fortran, but then  |
-| I suspect all fortran programs look  |
-|           like `firsts')"            |
-|           (By Olaf Kirch)            |
-+--------------------------------------+
-           \          
-             .--~~,__ 
-:-....,-------`~~'._.'
- `-,,,  ,_      ;'~U' 
-  _,-' ,'`-__; '--.   
- (_/'~~      ''''(;   
+                          _            +--------------------------------------+
+                        ,:'/   _..._   |    "I don't know why, but first C    |
+                       // ( `""-.._.'  |  programs tend to look a lot worse   |
+                       \| /    6\___  /|                 than                 |
+                       |     6      4  | first programs in any other language |
+                       |            /  | (maybe except for fortran, but then  |
+                       \_       .--'   | I suspect all fortran programs look  |
+                       (_'---'`)       |           like `firsts')"            |
+                       / `'---`()      |           (By Olaf Kirch)            |
+                     ,'        |       +--------------------------------------+
+     ,            .'`          |                                               
+     )\       _.-'             ;                                               
+    / |    .'`   _            /                                                
+  /` /   .'       '.        , |                                                
+ /  /   /           \   ;   | |                                                
+|  \  |            |  .|   | |                                                 
+  \  `"|           /.-' |   | |                                                
+   '-..-\       _.;.._  |   |.;-.                                              
+         \    <`.._  )) |  .;-. ))                                             
+         (__.  `  ))-'  \_    ))'                                              
+             `'--"`       `"""`                                                
